@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class SobrevivenciaGuerreiro {
+	public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int vida = 100;
+
+        System.out.println("O guerreiro entra na batalha com " + vida + " pontos de vida!");
+
+        do {
+            System.out.println("Informe o dano recebido nesta rodada: ");
+            int dano = ler.nextInt();
+            
+            vida -= dano;
+
+          
+            if (vida < 0) {
+                vida = 0;
+            }
+
+            System.out.println("Vida restante: " + vida);
+
+        } while (vida > 0);
+
+        System.out.println("GAME OVER");
+        ler.close();
+    }
+}
