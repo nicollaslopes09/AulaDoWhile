@@ -1,0 +1,56 @@
+package doWhile;
+
+import java.util.Scanner;
+
+public class CorridaMaluca {
+	public static void main(String[] args) {
+		  Scanner ler = new Scanner(System.in);
+	        int distanciaA = 0;
+	        int distanciaB = 0;
+	        int rodada = 1;
+
+	        System.out.println("   inicio da corrida maluca!!!   ");
+
+	        do {
+	            System.out.println("---Rodada " + rodada + " !   ");
+	            System.out.print("Metros percorridos pelo Carro A nesta rodada: ");
+	            distanciaA += ler.nextInt();
+
+	            System.out.print("Metros percorridos pelo Carro B nesta rodada: ");
+	            distanciaB += ler.nextInt();
+
+	     
+	            if (distanciaA > distanciaB) {
+	                System.out.println("Líder atual: Carro A");
+	            } else if (distanciaB > distanciaA) {
+	                System.out.println("Líder atual: Carro B");
+	            } else {
+	                System.out.println("Os carros estão empatados no momento!");
+	            }
+
+	            rodada++;
+
+	        } while (distanciaA < 100 && distanciaB < 100);
+
+	        System.out.println("   Fim da corrida!!   ");
+	        
+	    
+	        System.out.println("Distância final do Carro A: " + distanciaA + " metros");
+	        System.out.println("Distância final do Carro B: " + distanciaB + " metros");
+
+	      
+	        if (distanciaA >= 100 && distanciaB >= 100) {
+	            System.out.println("Resultado: Empate! Ambos ultrapassaram 100 metros na mesma rodada.");
+	        } else if (distanciaA >= 100) {
+	            System.out.println("Resultado: O carro A venceu a corrida!");
+	        } else {
+	            System.out.println("Resultado: O carro B venceu a corrida!");
+	        }
+
+	        ler.close();
+	    }
+	}
+
+	
+
+
