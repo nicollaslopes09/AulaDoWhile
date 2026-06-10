@@ -1,0 +1,59 @@
+package doWhile;
+
+import java.util.Scanner;
+
+public class SistemaLanchonete {
+	   public static void main(String[] args) {
+	        Scanner ler = new Scanner(System.in);
+	        double totalCompra = 0;
+	        int quantidadeItens = 0;
+	        int opcao;
+
+	        do {
+	            System.out.println("   Cardapio lanchonete   ");
+	            System.out.println("Digite 1 para adicionar Hambúrguer -> R$20");
+	            System.out.println("Digite 2 para adicionar Refrigerante -> R$8");
+	            System.out.println("Digite 3 para adicionar Batata Frita -> R$15");
+	            System.out.println("Digite 4 para adicionar Finalizar pedido");
+	            System.out.print("Escolha uma opção: ");
+	            opcao = ler.nextInt();
+
+	            switch (opcao) {
+	                case 1:
+	                    totalCompra += 20;
+	                    quantidadeItens++;
+	                    System.out.println("Hambúrguer adicionado!");
+	                    break;
+	                case 2:
+	                    totalCompra += 8;
+	                    quantidadeItens++;
+	                    System.out.println("Refrigerante adicionado!");
+	                    break;
+	                case 3:
+	                    totalCompra += 15;
+	                    quantidadeItens++;
+	                    System.out.println("Batata Frita adicionada!");
+	                    break;
+	                case 4:
+	                    System.out.println("Processando o seu pedido...");
+	                    break;
+	                default:
+	                    System.out.println("Opção inválida! Tente novamente.");
+	            }
+	        } while (opcao != 4);
+
+	        
+	        if (totalCompra > 100) {
+	            double desconto = totalCompra * 0.10;
+	            totalCompra -= desconto;
+	            System.out.println("Desconto de 10% aplicado (compra acima de R$100)!");
+	        }
+
+	        System.out.println("   Resumo da compra   ");
+	        System.out.println("Quantidade de itens comprados: " + quantidadeItens);
+	        System.out.printf("Valor final da compra: R$ " + totalCompra);
+	        ler.close();
+	    }
+	}
+
+
