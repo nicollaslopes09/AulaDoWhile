@@ -1,0 +1,55 @@
+package doWhile;
+
+import java.util.Scanner;
+
+public class CaixaEletronico {
+	  public static void main(String[] args) {
+	        Scanner ler = new Scanner(System.in);
+	        double saldo = 1000.0;
+	        int opcao = 0;
+
+	        while (opcao != 4) {
+	            System.out.println("  caixa eletronico   ");
+	            System.out.println("Digite 1 para consultar saldo");
+	            System.out.println("Digite 2 para depositar dinheiro");
+	            System.out.println("Digite 3 para sacar dinheiro");
+	            System.out.println("Digite 4 para encerrar sistema");
+	            System.out.print("Escolha uma opção: ");
+	            opcao = ler.nextInt();
+
+	            switch (opcao) {
+	                case 1:
+	                    System.out.printf("Seu saldo atual é: " + saldo);
+	                    break;
+	                case 2:
+	                    System.out.print("Digite o valor para depósito: R$ ");
+	                    double deposito = ler.nextDouble();
+	                    if (deposito > 0) {
+	                        saldo += deposito;
+	                        System.out.println("Depósito realizado com sucesso!");
+	                    } else {
+	                        System.out.println("Valor inválido.");
+	                    }
+	                    break;
+	                case 3:
+	                    System.out.print("Digite o valor para saque: R$ ");
+	                    double saque = ler.nextDouble();
+	                    if (saque <= saldo) {
+	                        saldo -= saque;
+	                        System.out.println("Saque realizado com sucesso!");
+	                    } else {
+	                        System.out.println("Saldo insuficiente");
+	                    }
+	                    break;
+	                case 4:
+	                    System.out.println("Sistema encerrado. Obrigado!");
+	                    break;
+	                default:
+	                    System.out.println("Opção inválida! Tente novamente.");
+	            }
+	        }
+	        ler.close();
+	    }
+	}
+
+
